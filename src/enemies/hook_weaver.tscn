@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://src/enemies/hook_weaver.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/icons/chord.svg" id="20"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(30, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2"]
+size = Vector2(34, 24)
+
+[node name="HookWeaver" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1")
+max_hp = 3
+card_drop = 3
+stompable = true
+score_value = 80.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="Body" type="ColorRect" parent="Visual"]
+offset_left = -15.0
+offset_top = -10.0
+offset_right = 15.0
+offset_bottom = 10.0
+color = Color(0.949, 0.949, 0.949, 1)
+
+[node name="LegL" type="ColorRect" parent="Visual"]
+offset_left = -21.0
+offset_top = -2.0
+offset_right = -15.0
+offset_bottom = 14.0
+color = Color(0.949, 0.949, 0.949, 1)
+
+[node name="LegR" type="ColorRect" parent="Visual"]
+offset_left = 15.0
+offset_top = -2.0
+offset_right = 21.0
+offset_bottom = 14.0
+color = Color(0.949, 0.949, 0.949, 1)
+
+[node name="Glyph" type="TextureRect" parent="Visual"]
+modulate = Color(1, 0.180392, 0.533333, 1)
+offset_left = -9.0
+offset_top = -12.0
+offset_right = 9.0
+offset_bottom = 10.0
+texture = ExtResource("20")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_2")

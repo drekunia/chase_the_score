@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Chase the Score — 1-bit climber chasing the music -->
+  <rect width="128" height="128" rx="16" fill="#0a0a0a"/>
+  <!-- music source rings, top center -->
+  <circle cx="64" cy="30" r="7" fill="#ff2e88"/>
+  <circle cx="64" cy="30" r="4" fill="#f2f2f2"/>
+  <path d="M 48 30 A 16 16 0 0 1 80 30" fill="none" stroke="#ff2e88" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+  <path d="M 39 30 A 25 25 0 0 1 89 30" fill="none" stroke="#ff2e88" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+  <path d="M 30 30 A 34 34 0 0 1 98 30" fill="none" stroke="#ff2e88" stroke-width="3" stroke-linecap="round" opacity="0.25"/>
+  <!-- climber, mid-jump -->
+  <rect x="49" y="58" width="30" height="34" fill="#f2f2f2"/>
+  <rect x="66" y="65" width="8" height="8" fill="#ff2e88"/>
+  <!-- platforms -->
+  <rect x="20" y="104" width="34" height="7" fill="#f2f2f2"/>
+  <rect x="76" y="116" width="32" height="7" fill="#f2f2f2" opacity="0.55"/>
+  <!-- kill wave hint, bottom edge -->
+  <rect x="10" y="123" width="10" height="5" fill="#ff2e88" opacity="0.8"/>
+  <rect x="26" y="125" width="8" height="3" fill="#ff2e88" opacity="0.5"/>
+  <rect x="112" y="124" width="8" height="4" fill="#ff2e88" opacity="0.6"/>
+</svg>

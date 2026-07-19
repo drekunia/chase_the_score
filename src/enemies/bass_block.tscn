@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cne5wswxjgfhi"]
+
+[ext_resource type="Script" uid="uid://b3a74tenyokyh" path="res://src/enemies/bass_block.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/icons/square.svg" id="20"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(64, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2"]
+size = Vector2(68, 52)
+
+[node name="BassBlock" type="CharacterBody2D" unique_id=1433054442]
+collision_layer = 0
+script = ExtResource("1")
+max_hp = 6
+card_drop = 2
+stompable = false
+score_value = 120.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1602040064]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="Visual" type="Node2D" parent="." unique_id=1250899217]
+
+[node name="Body" type="ColorRect" parent="Visual" unique_id=1938752806]
+offset_left = -32.0
+offset_top = -24.0
+offset_right = 32.0
+offset_bottom = 24.0
+color = Color(0.949, 0.949, 0.949, 1)
+
+[node name="Face" type="ColorRect" parent="Visual" unique_id=1506148470]
+offset_left = -24.0
+offset_top = 8.0
+offset_right = 24.0
+offset_bottom = 16.0
+color = Color(1, 0.180392, 0.533333, 1)
+
+[node name="Glyph" type="TextureRect" parent="Visual" unique_id=508877394]
+modulate = Color(0.04, 0.04, 0.05, 1)
+offset_left = -10.0
+offset_top = -16.0
+offset_right = 10.0
+offset_bottom = 8.0
+texture = ExtResource("20")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=2005318395]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1596948897]
+shape = SubResource("RectangleShape2D_2")

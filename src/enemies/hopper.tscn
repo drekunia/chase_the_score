@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://src/enemies/hopper.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/icons/squared_square.svg" id="20"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(24, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2"]
+size = Vector2(26, 22)
+
+[node name="Hopper" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("1")
+max_hp = 1
+card_drop = 0
+score_value = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="Body" type="ColorRect" parent="Visual"]
+offset_left = -12.0
+offset_top = -10.0
+offset_right = 12.0
+offset_bottom = 10.0
+color = Color(0.949, 0.949, 0.949, 1)
+
+[node name="Glyph" type="TextureRect" parent="Visual"]
+modulate = Color(0.04, 0.04, 0.05, 1)
+offset_left = -8.0
+offset_top = -12.0
+offset_right = 8.0
+offset_bottom = 10.0
+texture = ExtResource("20")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_2")

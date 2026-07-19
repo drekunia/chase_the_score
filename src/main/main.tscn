@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cvqmhpeknrrty"]
+
+[ext_resource type="Script" uid="uid://castwrwbtp8kh" path="res://src/main/main.gd" id="1"]
+[ext_resource type="PackedScene" path="res://src/player/player.tscn" id="2"]
+[ext_resource type="Script" uid="uid://c3ag5prdnwpsh" path="res://src/level/kill_line.gd" id="3"]
+[ext_resource type="Script" uid="uid://cng54eehk30vf" path="res://src/level/music_source.gd" id="4"]
+[ext_resource type="Script" uid="uid://b5a0yhv1e7w4p" path="res://src/ui/hud.gd" id="5"]
+[ext_resource type="Script" uid="uid://bqn3qhx532gc0" path="res://src/ui/crosshair.gd" id="6"]
+[ext_resource type="Script" path="res://src/ui/pause_menu.gd" id="7"]
+
+[node name="Main" type="Node2D" unique_id=1506392675]
+script = ExtResource("1")
+
+[node name="Player" parent="." unique_id=1597168723 instance=ExtResource("2")]
+position = Vector2(240, -48)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=873433117]
+position = Vector2(240, -158)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="KillLine" type="Area2D" parent="." unique_id=2084491352]
+position = Vector2(240, 700)
+script = ExtResource("3")
+
+[node name="MusicSource" type="Node2D" parent="." unique_id=239948475]
+position = Vector2(240, -700)
+script = ExtResource("4")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=47485156]
+script = ExtResource("5")
+
+[node name="Crosshair" type="Node2D" parent="." unique_id=1718465120]
+script = ExtResource("6")
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+script = ExtResource("7")
